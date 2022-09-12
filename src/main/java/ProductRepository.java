@@ -27,15 +27,14 @@ public class ProductRepository {
         if (findById(id) == null) {
             throw new NotFoundException("Product with required id " + id + " already exist");
         }
-
-//        Product[] tmp = new Product[products.length - 1];
-//        int copyToIndex = 0;
-//        for (Product product : products) {
-//            if (product.getId() != id) {
-//                tmp[copyToIndex] = product;
-//                copyToIndex++;
-//            }
-//        }
-//        products = tmp;
+        Product[] tmp = new Product[products.length - 1];
+        int copyToIndex = 0;
+        for (Product product : products) {
+            if (product.getId() != id) {
+                tmp[copyToIndex] = product;
+                copyToIndex++;
+            }
+        }
+        products = tmp;
     }
 }
